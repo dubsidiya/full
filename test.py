@@ -23,8 +23,13 @@ def digitstoint(x, n):
     return sum([x[::-1][i]*n**i for i in range(len(x))])
 def eachcount(x):
     return {y:x.count(y) for y in set(x)}
-
-
+def factorize(x):
+    ans =[]
+    for i in range(2,int(x ** 0.5)+1):
+        if x % i == 0:
+            ans = [i] + factorize(x // i)
+            break
+    return ans if len(ans) else [x]
 
 
 
