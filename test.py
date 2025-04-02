@@ -31,11 +31,3 @@ def factorize(x):
             break
     return ans if len(ans) else [x]
 
-
-
-
-
-
-
-
-
