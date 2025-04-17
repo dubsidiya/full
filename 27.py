@@ -1,9 +1,12 @@
 # чисто в теории должно простые задачи разваливать фри
 # 27 - 10
+from time import *
+start = time()
 point = []
 for s in open('27-10'):
     x,y = map(float,s.replace(',','.').split())
     point.append((x,y))
+point.sort()
 from sys import *
 setrecursionlimit(10000)
 def f(x,y):
@@ -14,7 +17,7 @@ def f(x,y):
     while i<len(point):
         x1 , y1 = point[i]
         if ((x1-x)**2+(y1-y)**2)**0.5<=0.3:
-            ans+=f(x1,y1)
+            ans += f(x1,y1)
         else:
             i+=1
     return ans
@@ -27,4 +30,5 @@ for i in range(len(klaster)):
     cc.append((cx,cy))
 print(cc)
 print(int(sum([x for x,y in cc])/len(cc)*10000) , int(sum([y for x,y in cc])/len(cc)*10000))
+print(time()-start)
 # 7881 -5340
